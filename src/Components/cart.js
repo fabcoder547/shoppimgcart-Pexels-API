@@ -6,8 +6,8 @@ const Cart = ({ cartItem, removeItem, buyNow }) => {
     amount = parseFloat(amount) + parseFloat(item.productPrice);
   });
   return (
-    <div className="container">
-      <h1 className="text-success">Your Cart</h1>
+    <div className="container cart">
+      <h3 className="text-white card-header">Your Cart</h3>
       <ul>
         {cartItem.map((item) => (
           <li key={item.id}>
@@ -17,7 +17,7 @@ const Cart = ({ cartItem, removeItem, buyNow }) => {
               </div>
               <div className="col texxt-center">
                 <div>
-                  <h6>{item.productName}</h6>
+                  <h6 className="text-white">{item.productName}</h6>
                   <p>
                     {" "}
                     <span>{item.productPrice}</span>
@@ -41,7 +41,6 @@ const Cart = ({ cartItem, removeItem, buyNow }) => {
           <div className="card-header">GrandTotal</div>
           <div className="card-body total-body">
             <h6>
-              {" "}
               your amount for {cartItem.length} is <span>{amount}</span>
             </h6>
             <button className="btn btn-success buybtn" onClick={buyNow}>
@@ -50,7 +49,7 @@ const Cart = ({ cartItem, removeItem, buyNow }) => {
           </div>
         </div>
       ) : (
-        <h1>cart is Empty</h1>
+        <h3 className="text-white">cart is Empty</h3>
       )}
     </div>
   );
