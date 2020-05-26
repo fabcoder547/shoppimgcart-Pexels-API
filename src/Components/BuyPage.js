@@ -34,36 +34,13 @@ const BuyPage = ({ addItemInCart }) => {
       });
   };
 
-  // const fetchPhotos = () => {
-  //   Axios.get(localurl)
-  //     .then(({ data }) => {
-  //       const { photos } = data;
-
-  //      const allProducts = photos.map((photo) => ({
-  //         mediumImage: photo.src.medium,
-  //         smallImage: photo.src.tiny,
-  //         photographer: photo.photographer,
-  //         productName: random.word(),
-  //         productPrice: commerce.price(),
-  //         id: random.uuid(),
-  //       }));
-  //       setIserror(false);
-  //       console.log(allProducts);
-  //       setProduct(allProducts);
-  //     })
-  //     .catch((err) => {
-  //       setIserror(true);
-  //       console.log(Iserror);
-  //     });
-  // };
-
   useEffect(() => {
     fetchPhotos();
   }, []);
 
   return (
     <div className="container">
-      <h1>Shooping cart</h1>
+      <h1 className="card-header header">Shooping cart</h1>
       <div className="row">
         {Iserror === false ? (
           products.map((product) => (
